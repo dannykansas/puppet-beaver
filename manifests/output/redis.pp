@@ -134,14 +134,10 @@ define beaver::output::redis(
     validate_string($ssh_remote_host)
     $opt_ssh_remote_host = "ssh_remote_host: ${$ssh_remote_host}\n"
   }
-  
-  if ! is_numeric($ssh_remote_port) {
-    $opt_ssh_remote_port = "ssh_remote_port: ${$ssh_remote_port}\n"    
-  }
 
-  if ! is_numeric($logstash_version) {
-    $opt_logstash_version = "logstash_version: ${$logstash_version}\n"    
-  }
+  $opt_ssh_remote_port = "ssh_remote_port: ${$ssh_remote_port}\n" 
+  $opt_logstash_version = "logstash_version: ${$logstash_version}\n"    
+
 
   #### Create file fragment
 
